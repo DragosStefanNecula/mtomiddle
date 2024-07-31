@@ -4,6 +4,7 @@
   "description": "Pressing Shift + M takes me to middle of the view. Inspired by VIM motions, however, this one takes into account folding spaces and it doesn't unfold them.",
   "version": "0.0.1",
   "icon": "output.png",
+  "publisher": "DragosStefanNecula",
   "engines": {
     "vscode": "^1.91.0"
   },
