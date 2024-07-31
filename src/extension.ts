@@ -23,15 +23,11 @@ export function activate(context: vscode.ExtensionContext) {
 
 			let middle = Math.round(rangeLineCount / 2);
 
-			console.log("Middle is: " + middle);
 			let cursorPos = 0;
 
 			for (const [key, value] of rangeMap) {
-				console.log("For tab starting at " + key + "the number of lines is " + value);
 				if (middle > value) {
-					console.log(middle + "is larger than" + value);
 					middle = middle - value;
-					console.log("therefore new middle is " + middle);
 				} else {
 					cursorPos = key + middle - 1;
 					break;
@@ -39,7 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			let middlePosition = new vscode.Position(cursorPos, 0);
-			console.log(middlePosition);
+
 			editor.selection = new vscode.Selection(middlePosition, middlePosition);
 			editor.revealRange(new vscode.Range(middlePosition, middlePosition));
 		}
